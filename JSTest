@@ -1,0 +1,53 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+const NFTs = [];
+
+function mintNFT (crytoName_, symbol_,creationDate_,price_ ) {
+    const NFT= { 
+      "crytoName" : crytoName_ ,
+      "symbol": symbol_,
+      "creationDate" : creationDate_,
+      "price": price_
+     }
+  NFTs.push(NFT);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+  for(let i=0; i<NFTs.length ;i++)
+  {console.log("\nIndex:\t\t\t"+ (i+1));
+   console.log("Crypto Name:\t" + NFTs[i].crytoName);
+   console.log("Symbol:\t\t\t" + NFTs[i].symbol);
+   console.log("Day Created:\t" + NFTs[i].creationDate);
+   console.log("Price:\t\t\t" + NFTs[i].price);
+  }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+console.log("\nTotal Number of NFTs :" + NFTs.length);
+}
+
+// call your functions below this line
+mintNFT("Bitcoin","BTC","09-01-2009","US$69,617.02");
+mintNFT("Ether","ETH","31-07-2015","US$3,721.45");
+mintNFT("Litecoin","LTC","08-10-2011","US$85.37");
+mintNFT("Binance coin","BNB","14-07-2017","US$601.56");
+listNFTs();
+getTotalSupply();
+
+
